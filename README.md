@@ -24,7 +24,7 @@ $.script_load({
     { path: "path/to/script1.js" },
     { path: "path/to/script2.js" }
   ],
-  script_loc  : "",  //directory containing scripts
+script_loc  : "",                             //directory containing scripts
   alertify    : true,                         //show alertify notifications
   callback    : function() {},                //function to call when scripts are loaded
   debug       : false,                        //show debug output 
