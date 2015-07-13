@@ -31,3 +31,7 @@ script_loc  : "",                             //directory containing scripts
   timeout     : 50                            //10x timeout in seconds
 });
 ```
+
+Contact Me
+----------
+If you encounter any bugs or have a suggestion on improving this plugin, please e-mail me at daa0006@auburn.edu
