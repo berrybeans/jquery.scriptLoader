@@ -1,3 +1,5 @@
+﻿/* Denver Atwood */
+﻿
 ﻿$.script_load = function (obj) {
     /*obj fields:
      *  script_loc:     string,
