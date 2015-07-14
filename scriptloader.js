@@ -1,5 +1,5 @@
 ﻿/* Denver Atwood */
-﻿/* Gnu GPL v3.0 */
+﻿/* GNU GPL v3.0 */
 ﻿
 ﻿$.script_load = function (obj) {
     /*obj fields:
