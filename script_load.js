@@ -1,7 +1,4 @@
-﻿/* Denver Atwood */
-﻿/* GNU GPL v3.0 */
-﻿
-﻿$.script_load = function (obj) {
+$.script_load = function (obj) {
     /*obj fields:
      *  script_loc:     string,
      *  script_lib:     [{path: string}, ...],
@@ -23,6 +20,9 @@
     $.each(obj.script_lib, function (i, d) {
         $.getScript(obj.script_loc + d.path, function (data, textStatus, jqxhr) {
         }).success(function () {
+            if (obj.debug && alertify_enabled) {
+                alertify.log("Loaded " + d.path + ".");
+            }
             d.loaded = true;
         }).fail(function () {
             if (obj.debug && alertify_enabled) {
@@ -36,17 +36,17 @@
         setTimeout(function () {
             obj.timeout--;
             if (obj.script_lib.map(function (d) { return d.loaded; }).indexOf(false) === -1 && !error) {
-                if (alertify_enabled)
-                    alertify.success("Scripts loaded.");
                 try {
                     obj.callback();
+                    if (alertify_enabled)
+                        alertify.success("Scripts loaded.");
                 } catch (e) {
                     if (obj.debug) {
                         if (alertify_enabled)
                             alertify.error('CRITICAL ERROR WHILE LOADING: ' + e);
                         throw e;
                     } else {
-                        location.assign(location.pathname);
+                        poll();
                     }
                 }
 
@@ -55,6 +55,8 @@
             } else {
                 if (alertify_enabled)
                     alertify.error("Scripts failed to load.");
+                else
+                    alert("Scripts failed to load.");
             }
         }, 100);
     };
