@@ -2,9 +2,9 @@
     $.script_load = function (obj) {
         //create a local object
         var _obj = {
-            //[PARAM]       : [NULL TEST]       ? [DEFAULT VALUE]   : [SUPPLIED VALUE]
+            //[PARAM]       : [NULL TEST]       ? [SUPPLIED VALUE]  : [DEFAULT VALUE]
             script_lib      : obj.script_lib    ? obj.script_lib    : [],
-            timeout         : obj.timeout       ? obj.timeout       : 50,
+            timeout         : obj.timeout       ? obj.timeout * 10  : 50,
             alertify        : obj.alertify      ? obj.alertify      : false,
             debug           : obj.debug         ? obj.debug         : false,
             callback        : obj.callback      ? obj.callback      : function () { },
