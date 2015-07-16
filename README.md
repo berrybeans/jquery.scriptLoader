@@ -21,14 +21,14 @@ All values shown are default values.
 ```js
 $.script_load({
   //[PARAM]     : [DEFAULT VALUE]
-  script_lib    : [],
-  timeout       : 50,
-  alertify      : false,
-  debug         : false,
-  callback      : function () { },
-  script_loc    : '',
-  success_msg   : "Scripts loaded.",
-  fail_msg      : "Scripts failed to load."
+  script_lib    : [],                         //defaults to an empty list
+  timeout       : 5,                          //timeout in seconds
+  alertify      : false,                      //show progress using alertify
+  debug         : false,                      //display debugging messages. REQUIRES ALERTIFY
+  callback      : function () { },            //what to do after your scripts are loaded
+  script_loc    : '',                         //directory to prefix all path with
+  success_msg   : "Scripts loaded.",          //alertify message to display on successful completion. REQUIRES ALERTIFY
+  fail_msg      : "Scripts failed to load."   //alert to display on fail. 
 })
 ```
 
