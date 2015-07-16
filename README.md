@@ -29,7 +29,7 @@ $.script_load({
   script_loc    : '',
   success_msg   : "Scripts loaded.",
   fail_msg      : "Scripts failed to load."
-
+})
 ```
 
 Contact Me
